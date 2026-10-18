@@ -63,3 +63,23 @@ html{scroll-behavior:smooth;scroll-padding-top:35px}body{background:var(--bg);fo
 :root[data-theme='night'] .chapter-preview-card :is(.preview-goal p,.preview-check,.preview-feedback){color:#5a6d54}
 @media(max-width:700px){.topbar .demo-tag{display:none}.topbar .theme-switch{width:38px;height:38px}.topbar .icon-btn{height:38px;width:38px}.action-main strong{font-size:12px}.action-main p{font-size:10px}.action-row{padding:22px 0}.section-heading>.text-button{font-size:10px}.page-footer button{font-size:9px;padding:5px 0}.page-header p{font-size:12px}.insight-card p{font-size:12px}.welcome-copy>p{font-size:14px}.focus-note{font-size:10px}.modal-intro{font-size:13px}}
 
+
+/* A living compass and a circle that grows together. */
+.vision-art::after{top:50%;left:50%;margin:-6px 0 0 -6px;transform:rotate(-50deg) translateX(68px);animation:vision-orbit 18s linear infinite;box-shadow:0 0 0 5px #a8c48112}
+.vision-art>span:nth-child(3){animation:vision-ring 36s linear infinite}
+.vision-art>b{animation:vision-breathe 5s ease-in-out infinite}
+.circle-art .circle-link{width:106px;height:106px;animation:vision-ring 42s linear infinite reverse}
+.circle-art .circle-person{top:50%;left:50%;right:auto;bottom:auto;margin:-22.5px 0 0 -22.5px;animation:community-orbit 28s linear infinite;transform:rotate(var(--orbit-start)) translateX(53px) rotate(calc(-1 * var(--orbit-start)))}
+.circle-person-one{--orbit-start:-125deg}
+.circle-person-two{--orbit-start:-5deg}
+.circle-person-three{--orbit-start:115deg}
+.rhythm-motion-tools{display:flex;justify-content:flex-end;margin-top:14px}
+.rhythm-motion-toggle{font:inherit;font-size:11px;letter-spacing:.02em;color:var(--copy,#62745d);border:1px solid #8da38755;background:transparent;border-radius:999px;padding:7px 13px;cursor:pointer;transition:background .2s,border-color .2s}
+.rhythm-motion-toggle:hover{background:#8da38712;border-color:#8da38799}
+.rhythm-motion-toggle:focus-visible{outline:2px solid #799c74;outline-offset:4px}
+.rhythm-section.motion-paused :is(.vision-art,.circle-art) *, .rhythm-section.motion-paused .vision-art::after{animation-play-state:paused}
+@keyframes vision-orbit{from{transform:rotate(-50deg) translateX(68px)}to{transform:rotate(310deg) translateX(68px)}}
+@keyframes vision-ring{to{transform:rotate(360deg)}}
+@keyframes vision-breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.09)}}
+@keyframes community-orbit{from{transform:rotate(var(--orbit-start)) translateX(53px) rotate(calc(-1 * var(--orbit-start)))}to{transform:rotate(calc(var(--orbit-start) + 360deg)) translateX(53px) rotate(calc(-1 * var(--orbit-start) - 360deg))}}
+@media(prefers-reduced-motion:reduce){.rhythm-motion-tools{display:none}.vision-art::after,.vision-art>b,.vision-art>span,.circle-art .circle-link,.circle-art .circle-person{animation:none!important}}
