@@ -4,6 +4,10 @@ A browser-based interactive product concept connecting a future-self blueprint t
 
 ## Explore
 
+**Live prototype:** [greatnessly-90day-prototype.vercel.app](https://greatnessly-90day-prototype.vercel.app)
+
+The public Vercel link opens without a login and includes the current design and animated circles, with pause controls and reduced-motion support.
+
 Serve this directory with any static server, for example `python -m http.server 4173`, then open http://localhost:4173.
 
 The app includes a three-step setup, sample dashboard, daily check-ins, editable goals and milestone progress, a 90-day journey map, journaling, progress insights and a sample accountability circle.
@@ -25,7 +29,13 @@ All changes are stored in the browser. AI guidance is curated. Sample circle act
 
 ## Verification
 
-JavaScript syntax and DOM interaction checks passed across onboarding, validation, actions, goals, milestones, journal, local circle posts, RSVP, settings, persistence, score details, reset, themes, goal preview, the journey slider, focus timing and reduced motion. The self-contained HTML also starts without JavaScript or CSS parser errors. Full visual browser QA was blocked by the execution environment's OS sandbox.
+JavaScript syntax and DOM interaction checks passed across onboarding, validation, actions, goals, milestones, journal, local circle posts, RSVP, settings, persistence, score details, reset, themes, goal preview, the journey slider, focus timing and reduced motion. The self-contained HTML also starts without JavaScript or CSS parser errors. Focused visual browser checks passed for the animated compass and community circle on desktop and mobile, including pause/resume, reduced motion and 390px responsive fit. The production Vercel link was tested in a fresh browser without authentication. Other pages still need a full visual browser review.
+
+## Deploying to Vercel
+
+This is a static site with no build or installation step. `vercel.json` configures the repository root for Vercel's Other framework preset. `.vercelignore` limits uploads to the public app assets and hosting configuration. Local Vercel state, environment files and dependencies are excluded from Git.
+
+The current production deployment uses the Vercel CLI. Automatic Git deployments have not been configured.
 
 ## Artwork
 
